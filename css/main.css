@@ -13,8 +13,13 @@ nav {
   padding: 15px;
 }
 nav p {
-  font-size: 1.5m;
+  font-size: 1.5em;
   padding-left: 30px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+nav p:hover {
+  color: rgba(124, 107, 10, 0.6156862745);
 }
 nav .icons {
   display: flex;
@@ -23,6 +28,44 @@ nav .icons {
 nav .icons button {
   background: none;
   border: none;
+  cursor: pointer;
+}
+
+article {
+  width: auto;
+  color: #7C6A0A;
+  padding-left: 45px;
+  padding-right: 45px;
+  display: flex;
+  justify-content: space-between;
+}
+article .impact-section {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding-top: 50px;
+}
+article h1 {
+  font-size: 3em;
+  padding: 0px;
+  margin: 0px;
+}
+article p {
+  font-size: 1.5em;
+}
+article button {
+  width: 12vw;
+  padding: 20px;
+  background: #FA9500;
+  border-style: none;
+  border-radius: 35px;
+  cursor: pointer;
+  color: white;
+  font-size: 1em;
+}
+article img {
+  width: 25vw;
+  border-radius: 19px;
 }
 
 footer {
