@@ -6,6 +6,20 @@ $quaternion-color: #FA9500 ;
 $font-stack: "IBM Plex Sans", sans-serif;
 $paragraph-size: 1.5em;
 
+@mixin flexCenter($direction, $content, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $content;
+  align-items: $align;
+}
+@mixin buttonStyle {
+  button {
+    background: none;
+    border-style: none;
+    cursor: pointer;
+  }
+}
+
 body {
   margin: 0px;
   padding: 0px;
@@ -14,8 +28,7 @@ body {
 }
 nav {
   width:  auto;
-  display: flex;
-  justify-content: space-between;
+  @include flexCenter(row, space-between , center);
   color: $primary-text-color;
   padding: 15px ;
   p {
@@ -30,11 +43,8 @@ nav {
   .icons {
     display: flex;
     gap: 15px;
-    button {
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
+    @include buttonStyle;
+    
   }
 }
 
@@ -44,11 +54,9 @@ article {
   padding-left: 45px;
   padding-right: 45px;
   padding-top: 50px;
-  display: flex;
-  justify-content: space-between;
+  @include flexCenter(row, space-between , center);
   .impact-section {
-    display: flex;
-    flex-direction: column;
+    @include flexCenter(column, space-evenly ,flex-start );
     gap: 25px;
     padding-top: 50px;
   }
@@ -60,13 +68,12 @@ article {
   p {
     font-size: $paragraph-size;
   }
+  @include buttonStyle;
   button {
     width:  12vw;
     padding: 20px;
     background: $quaternion-color;
-    border-style: none;
     border-radius: 35px;
-    cursor: pointer;
     color: white;
     font-size: 1em;
   }
@@ -92,11 +99,9 @@ section {
       padding-bottom: 60px;
     }
     .card-section {
-      display: flex;
+      @include flexCenter(row, space-evenly, center );
       width: auto;
       height: auto;
-      justify-content: center;
-      align-items: center;
       column-gap: 200px;
       row-gap: 60px;
       flex-wrap: wrap;
@@ -110,8 +115,8 @@ section {
       border-radius:8px ;
       .icon {
         width: 100%;
-        display: flex;
-        justify-content: flex-end;
+        
+        @include flexCenter(row,flex-end ,center );
         padding: 2px;
         padding-bottom: 10px;
         svg {
